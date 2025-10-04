@@ -1,0 +1,176 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+:root {
+  --background-color: #121212;
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #00e676;
+  --container-bg-color: #1e1e1e;
+  --border-color: #333;
+  --button-bg-color: #00e676;
+  --button-text-color: #121212;
+  --button-hover-bg-color: #69f0ae;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  user-select: none;
+}
+
+#game-container {
+  background-color: var(--container-bg-color);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--border-color);
+  max-width: 95vw;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 0px #000;
+  letter-spacing: 0.1em;
+}
+
+#score-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.score-box {
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  flex: 1;
+}
+
+.score-box span {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 5px;
+  color: var(--secondary-text-color);
+  word-break: break-all;
+}
+
+#game-canvas {
+  background-color: #1a1a1a;
+  border: 2px solid var(--border-color);
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
+  touch-action: none;
+}
+
+#game-over-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+#game-over-modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.modal-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ff4136; /* Red for game over */
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+#play-again-btn {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: 2px solid var(--button-text-color);
+}
+
+#play-again-btn:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+#play-again-btn:active {
+  transform: translateY(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  #game-container {
+    padding: 15px;
+    border: none;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #score-container {
+    font-size: 0.6rem;
+  }
+
+  .score-box span {
+    font-size: 1.1rem;
+  }
+
+  .modal-content h2 {
+    font-size: 2rem;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+  }
+
+  #play-again-btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}

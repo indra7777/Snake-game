@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Snake Game</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>3D SNAKE</h1>
+      <div id="score-container">
+        <div class="score-box">
+          SCORE
+          <span id="current-score">0</span>
+        </div>
+        <div class="score-box">
+          PREVIOUS
+          <span id="previous-score">0</span>
+        </div>
+        <div class="score-box">
+          HIGH SCORE
+          <span id="high-score">0</span>
+        </div>
+      </div>
+      <canvas id="game-canvas" width="400" height="400"></canvas>
+      <div id="game-over-modal" class="hidden">
+        <div class="modal-content">
+          <h2>GAME OVER</h2>
+          <p>Your Score: <span id="final-score">0</span></p>
+          <button id="play-again-btn">PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="index.tsx"></script>
+  </body>
+</html>
